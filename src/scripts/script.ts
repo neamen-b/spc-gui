@@ -1,7 +1,8 @@
 const bulb = `💡`;
 const bulb_div = document.getElementById('lightbulb')
 let pid = null;
-let vals : number[] = [.2,.3,.7,.8]
+let vals : number[] = [.2,.3,.7,.8,.5]
+let enc : number[] = vals.map(mapValueToPixel)
 
 
 
@@ -20,9 +21,15 @@ function flip() : string{
 // let points = document.getElementById("points-div")!
 
 const pointsDiv =document.getElementById("points-div")!
+const codeDiv = document.getElementById('code')! as HTMLInputElement;
 pointsDiv.innerHTML='';
 function addPoint(){
-    vals.shift(); vals.push(Number(document.getElementById('code')!?.innerHTML))
+    vals.shift(); enc.shift();
+    const val = Number(codeDiv.value);
+    const e = mapValueToPixel(val);
+    vals.push(val)
+    enc.push(mapValueToPixel(vals[vals.length-1]))
+    console.log('val',val,'e',e)
     const ans = vals.map((v,i)=>`<div class='point' style='margin-left:${(i+1)*125}px; top:${mapValueToPixel(v)}px'></div>`)
     console.log(ans,vals)
     pointsDiv.innerHTML=ans.join('')
@@ -42,7 +49,9 @@ function mapValueToPixel(value:number):number {
     if (value > maxValue) value = maxValue;
 
     // Map the value to pixel position
-    return maxPixel - (value / maxValue * maxPixel);
+    const ans = maxPixel - (value / maxValue * maxPixel);
+    console.log('value',value,'ans',ans)
+    return ans
 }
 
 
