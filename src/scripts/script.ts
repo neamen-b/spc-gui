@@ -22,7 +22,7 @@ function flip() : string{
 const pointsDiv =document.getElementById("points-div")!
 pointsDiv.innerHTML='';
 function addPoint(){
-    // vals.shift(); vals.push(Number(document.getElementById('code')!?.innerHTML))
+    vals.shift(); vals.push(Number(document.getElementById('code')!?.innerHTML))
     const ans = vals.map((v,i)=>`<div class='point' style='margin-left:${(i+1)*125}px; top:${mapValueToPixel(v)}px'></div>`)
     console.log(ans,vals)
     pointsDiv.innerHTML=ans.join('')
