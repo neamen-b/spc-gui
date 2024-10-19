@@ -5,13 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SPC Webpage</title>
     <link rel="stylesheet" href="./styles/styles.css">
-    </style>
+    <script src="./scripts/script.js" defer></script>
 </head>
 <body>
     <!-- style="display: flex;" -->
-
 <div class="bar-container">
-    <div style="border: 1px solid black;">
+    <div>
+    <div id="points-div">
+        <!-- <div class="point" style="margin-left: 125px; top: 290px;"></div> 
+        <div class="point" style="margin-left: 250px; top: 200px;"></div>
+        <div class="point" style="margin-left: 375px; top: 150px;"></div>
+        <div class="point" style="margin-left: 500px; top: 100px;"></div>
+        <div class="point" style="margin-left: 650px; top: 0px;"></div> -->
+        <!-- <div class="point"></div> -->
+    </div>
     <div class="bar red">.60</div>
     <div class="bar yellow">.50</div>
     <div class="bar green">.40</div>
@@ -21,8 +28,16 @@
 
     <!-- SVG to plot measurements -->
     <!-- <svg width="100" height="300" id="plot-area"></svg> -->
+    
     <div class="lightbulb" id="lightbulb">💡</div>
+    <div style="border-bottom: 0px;">
+    <label for="code">Enter Measurement</label>
+    <input type='text' id="code" name="code">
+    <button type="button" onclick="addPoint()">Submit</button>
+    
 </div>
+</div>
+<!-- <img src='./images/red bulb crop.png'></img> -->
 
 
 

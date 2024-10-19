@@ -5,13 +5,22 @@ html,body{
 }
 
 .bar-container {
-    border: 1px solid black;
+    /* border: 1px solid black; */
+    /* border-bottom: 0px; */
     position: relative;
     display: flex;
     flex-direction: column;
     max-width: 800px;
     height: 300px;
     margin: 20px auto;
+}
+.point{
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: black;
+    z-index: 22;
 }
 .bar {
     height: 50px;
@@ -37,4 +46,5 @@ svg {
     right: 0px;
     /* margin-right: auto; */
     font-size: 30px;;
+    background-color: red;
 }
